@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -6,10 +5,15 @@ body {
 }
 
 header {
-  background: #2c3e50;
-  color: white;
-  padding: 15px;
-  text-align: center;
+  background-color: red;
+  color: #fff;
+  padding: 1rem;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 1rem;
 }
 
 nav a {
