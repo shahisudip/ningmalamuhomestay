@@ -1,4 +1,3 @@
-
 body{
 font-family:Poppins, sans-serif;
 margin:0;
@@ -7,38 +6,121 @@ color:#333;
 }
 
 header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 20px;
-background:#111;
-color:white;
+position: relative;
+display: flex;
+flex-direction: column; /* stack logo then nav */
+align-items: center;
+padding: 16px 20px;
+/* changed code: subtle dark gradient + light text for good contrast */
+background: linear-gradient(180deg, rgba(15,30,36,0.96), rgba(10,18,22,0.96));
+color: #fff;
+box-shadow: 0 4px 18px rgba(3,9,14,0.35);
 }
 
 .logo{
-font-weight:600;
+order: 1;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 6px 0;
+background: transparent;
+width: 260px;   /* increased desktop oval size */
+height: 108px;
+overflow: hidden; /* crop to container */
+border-radius: 999px; /* ensures container is oval */
+}
+
+.logo img{
+width: 100%;
+height: 100%;
+object-fit: cover; /* fill & crop image inside oval */
+display: block;
+border-radius: 999px; /* keep image edges smooth */
+}
+
+/* medium screens */
+@media (max-width: 1024px) {
+  .logo{
+    width: 220px;
+    height: 96px;
+  }
+}
+
+/* responsive adjustment for small screens */
+@media (max-width: 768px) {
+  .logo{
+    width: 80vw;            /* ~80% of device width */
+    max-width: 360px;       /* optional cap on larger phones */
+    aspect-ratio: 260 / 108;/* preserve desktop oval ratio */
+    height: auto;
+    overflow: hidden;
+    border-radius: 999px;
+    margin: 6px 0;
+  }
+
+  .logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 999px;
+  }
+
+  /* keep nav/mobile menu behavior */
+  nav{
+    display:none;
+    flex-direction:column;
+    background: linear-gradient(180deg, rgba(8,12,16,0.98), rgba(12,16,20,0.98));
+    position:absolute;
+    top:calc(80vw * 108 / 260 + 70px); /* keeps menu below the larger logo */
+    left:0;
+    width:100%;
+    padding:18px;
+    box-shadow: 0 10px 30px rgba(3,9,14,0.45);
+  }
 }
 
 nav{
-display:flex;
-gap:20px;
+order: 2;
+width: 100%;
+display: flex;
+justify-content: center;
+gap: 18px;
+margin-top: 12px;
+flex-wrap: wrap;
+background: transparent; /* transparent on desktop so header gradient shows */
 }
 
 nav a{
-color:white;
-text-decoration:none;
+color: #ffffff;
+text-decoration: none;
+padding: 8px 12px;
+border-radius: 8px;
+font-weight: 600;
+transition: background .18s ease, transform .08s ease;
+}
+nav a:hover{
+background: rgba(255,255,255,0.06);
+transform: translateY(-1px);
 }
 
 .bookbtn{
-background:orange;
-padding:8px 12px;
-border-radius:4px;
+background: linear-gradient(90deg,#ff7b2d,#ff9a3d);
+color: #091217;
+padding: 8px 14px;
+border-radius: 8px;
+font-weight: 700;
+box-shadow: 0 6px 18px rgba(255,122,34,0.14);
 }
 
 .hamburger{
-display:none;
-font-size:24px;
-cursor:pointer;
+position: absolute;
+right: 20px;
+top: 18px;
+cursor: pointer;
+display: none; /* shown on small screens below */
+color: #ffffff;
+font-size: 20px;
 }
 
 .hero{
@@ -150,12 +232,14 @@ margin-top:40px;
 nav{
 display:none;
 flex-direction:column;
-background:#111;
+/* changed code: dark, slightly translucent menu panel with padding */
+background: linear-gradient(180deg, rgba(8,12,16,0.98), rgba(12,16,20,0.98));
 position:absolute;
-top:60px;
+top:70px;
 left:0;
 width:100%;
-padding:20px;
+padding:18px;
+box-shadow: 0 10px 30px rgba(3,9,14,0.45);
 }
 
 nav.show{
@@ -164,6 +248,15 @@ display:flex;
 
 .hamburger{
 display:block;
+}
+
+/* mobile links full width, clear spacing */
+nav a{
+color:#fff;
+padding:12px 10px;
+width:100%;
+text-align:center;
+background:transparent;
 }
 
 .cards{
