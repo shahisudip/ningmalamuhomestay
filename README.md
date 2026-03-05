@@ -1,2 +1,0 @@
-# ningmalamuhomestay
-A homestay website

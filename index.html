@@ -4,32 +4,213 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ningma Lamu Homestay | Mangpoo</title>
-<link rel="stylesheet" href="css/style.css">
+<title>Ningma Lamu Homestay</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
 <header>
-  <h1>Ningma Lamu Homestay</h1>
-  <p>Peaceful Stay in Mangpoo, West Bengal</p>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="rooms.html">Rooms</a>
-    <a href="food.html">Food</a>
-    <a href="sightseeing.html">Sightseeing</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<div class="logo">Ningma Lamu</div>
+
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+
+<nav id="nav">
+<a href="#home">Home</a>
+<a href="#rooms">Rooms</a>
+<a href="#amenities">Amenities</a>
+<a href="#gallery">Gallery</a>
+<a href="#explore">Explore</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
+<a class="bookbtn" href="#book">Book Now</a>
+</nav>
 </header>
 
-<section class="hero">
-  <h2>Experience Nature & Comfort</h2>
-  <p>Enjoy peaceful lodging, local food, and beautiful sightseeing in Mangpoo.</p>
-  <a href="rooms.html" class="btn">Book Now</a>
+<section id="home" class="hero">
+<h1>Peaceful Himalayan Homestay</h1>
+<p>Mungpoo, Darjeeling Hills</p>
+<a href="#book" class="primary">Book Your Stay</a>
 </section>
 
+
+<section id="rooms" class="container">
+<h2>Rooms</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://picsum.photos/500/300?random=1">
+<h3>Deluxe Room</h3>
+<p>Max Guests: 2</p>
+<p>Mountain View • Hot Water • WiFi</p>
+<p class="price">₹2500 / night</p>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/500/300?random=2">
+<h3>Family Room</h3>
+<p>Max Guests: 4</p>
+<p>Large Room • Heater • WiFi</p>
+<p class="price">₹3500 / night</p>
+</div>
+
+</div>
+</section>
+
+
+<section id="amenities" class="container">
+<h2>Amenities</h2>
+
+<div class="grid">
+
+<div>
+<h3>Room Amenities</h3>
+<ul>
+<li>Attached Bathroom</li>
+<li>Hot Shower</li>
+<li>Heater</li>
+<li>Clean Linens</li>
+</ul>
+</div>
+
+<div>
+<h3>Property Amenities</h3>
+<ul>
+<li>Free WiFi</li>
+<li>Parking</li>
+<li>Garden</li>
+<li>Bonfire Area</li>
+</ul>
+</div>
+
+<div>
+<h3>Food</h3>
+<ul>
+<li>Home Cooked Meals</li>
+<li>Local Himalayan Food</li>
+<li>Tea and Snacks</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+
+<section id="gallery" class="container">
+<h2>Gallery</h2>
+
+<div class="slider">
+<img id="slide" src="https://picsum.photos/900/500?random=10">
+<div class="slider-buttons">
+<button onclick="prevSlide()">Prev</button>
+<button onclick="nextSlide()">Next</button>
+</div>
+</div>
+
+</section>
+
+
+<section id="explore" class="container">
+<h2>Explore Mungpoo</h2>
+
+<h3>Things To Do</h3>
+<ul>
+<li>Village Walk</li>
+<li>Tea Garden Tour</li>
+<li>Bonfire Evening</li>
+<li>Bird Watching</li>
+<li>Photography</li>
+</ul>
+
+<h3>Places To Visit</h3>
+<ul>
+<li>Rabindra Bhavan</li>
+<li>Ahaldara View Point</li>
+<li>Namthing Pokhri</li>
+<li>Sittong Orange Valley</li>
+</ul>
+
+</section>
+
+
+<section id="reviews" class="container">
+<h2>Guest Reviews</h2>
+
+<div class="cards">
+
+<div class="card review">
+<p>"Amazing mountain view and very warm hospitality."</p>
+<b>— Rahul</b>
+</div>
+
+<div class="card review">
+<p>"Food was excellent and rooms were clean."</p>
+<b>— Priya</b>
+</div>
+
+<div class="card review">
+<p>"Perfect place to relax away from the city."</p>
+<b>— Arjun</b>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="book" class="container">
+<h2>Book Your Stay</h2>
+
+<form onsubmit="bookStay(event)">
+
+<input placeholder="Name" required>
+<input placeholder="Phone" required>
+<input type="date" required>
+<input type="date" required>
+<input type="number" placeholder="Guests">
+
+<select>
+<option>Deluxe Room</option>
+<option>Family Room</option>
+</select>
+
+<button type="submit">Submit Booking Request</button>
+
+</form>
+
+<a class="whatsapp" target="_blank"
+href="https://wa.me/919999999999?text=Hello%20I%20want%20to%20book%20a%20room">
+Book via WhatsApp
+</a>
+
+</section>
+
+
+<section id="contact" class="container">
+<h2>Contact</h2>
+
+<p>Phone: +91 XXXXXXXX</p>
+<p>Email: example@email.com</p>
+
+<div class="map">
+<iframe
+src="https://www.google.com/maps?q=Mungpoo&output=embed"
+loading="lazy">
+</iframe>
+</div>
+
+</section>
+
+
 <footer>
-  <p>© 2026 Ningma Lamu Homestay | Mangpoo, West Bengal</p>
+<p>Getting There</p>
+<p>Nearest Airport: Bagdogra</p>
+<p>Nearest Railway Station: NJP</p>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
